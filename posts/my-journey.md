@@ -1,31 +1,37 @@
-# Keep Moving Forward: My Journey Through Tech and Finding My Path
+---
+title: "Keep Moving Forward: My Journey Through Tech"
+date: "2026-02-20"
+excerpt: "From CS to WIS, minors added and dropped — how following what I actually loved led me to AI-driven product engineering."
+---
 
-In 2022, I walked onto campus as a freshman Computer Science major. Like many others, I thought this was the only way to build a career in tech. I spent my first year staring at code and trying to fit into a mold that did not quite feel right. I was learning the basics, but I felt like I was missing the bigger picture of how people actually use technology.
+In 2022, I walked onto campus as a freshman Computer Science major. Like many others, I thought that was the only way to build a career in tech. I spent my first year staring at code, trying to fit into a mold that didn't quite feel right. I was learning the basics, but I kept missing the bigger picture — how people actually *use* technology.
 
-### The First Pivot
+## The First Pivot
 
-By my sophomore year, I realized I wanted something more. I discovered the Web and Information Systems (WIS) program. It focused on how systems work together and how users interact with data. I decided to pick it up as a minor. Suddenly, my classes felt more relevant. I was still doing the heavy lifting in CS, but WIS gave me the context I was looking for.
+By sophomore year I wanted something more. I discovered the **Web and Information Systems (WIS)** program — focused on how systems work together and how users interact with data. I picked it up as a minor, and suddenly my classes felt relevant. I was still doing the heavy lifting in CS, but WIS gave me the context I'd been looking for.
 
-### Making the Switch
+## Making the Switch
 
-The real shift happened during the first semester of my junior year. I realized that my passion for the "how" and "why" of technology was stronger than my interest in pure theory. I made a big decision. I switched my major to Web and Information Systems and kept Computer Science as a minor.
+The real shift happened in the first semester of junior year. My passion for the *how* and *why* of technology was clearly stronger than my interest in pure theory. So I made the call — I switched my major to WIS and kept Computer Science as a minor.
 
-This was a scary moment. It felt like I was stepping away from the "standard" path. However, I felt a weight lift off my shoulders. I was finally studying what I loved.
+It was a scary moment. It felt like stepping off the "standard" path. But I felt a weight lift off my shoulders. I was finally studying what I loved.
 
-### Letting Go to Level Up
+## Letting Go to Level Up
 
-By the second semester of my junior year, I hit another crossroads. I was still carrying the CS minor, but it was starting to feel like baggage. It was taking time away from the things I actually wanted to build. I decided to drop the minor entirely.
+Second semester of junior year brought another crossroads. The CS minor was starting to feel like baggage — taking time away from the things I actually wanted to build. I dropped it entirely.
 
-Some people thought I was giving up, but I was actually doubling down. By clearing my schedule of classes that did not serve my goals, I found the time to dive deep into AI-driven Product Engineering.
+Some people thought I was giving up. I was actually doubling down. Clearing my schedule of classes that didn't serve my goals gave me the time to go deep on **AI-driven Product Engineering**.
 
-### Finding My Edge
+## Finding My Edge
 
-Today, I am fully focused on building products powered by AI. While my CS friends are still working through traditional theory, I have spent my time learning how to actually implement AI in the real world. I have spent so much time building, testing, and learning that I now understand AI development better than many of the people who stayed on the traditional path.
+Today I'm fully focused on building products powered by AI. While the traditional CS path has its merits, I've spent my time learning how to implement AI in the real world — building, testing, shipping, and learning from what breaks. That hands-on focus has given me an edge I wouldn't have found staying on the default track.
 
-I am not just writing code. I am building solutions.
+I'm not just writing code. I'm building solutions.
 
-### Keep Moving Forward
+## Keep Moving Forward
 
-There is a great quote from the movie _Meet the Robinsons_ that says, "Keep moving forward." My journey was not a straight line. It was full of changes, doubts, and pivots. I shifted from CS to WIS, added a minor, swapped them, and eventually let one go.
+There's a quote from *Meet the Robinsons* that stuck with me: **"Keep moving forward."**
 
-If you are feeling confused or stuck in your major, remember that it is okay to change direction. Every step I took brought me closer to what I actually love doing. No matter how many times you have to adjust your plan, keep moving. You will find your path, and you will be happy when you get there.
+My journey wasn't a straight line. It was full of changes, doubts, and pivots. CS to WIS. Minor added. Minor swapped. Minor dropped. Each decision felt risky in the moment and obvious in hindsight.
+
+If you're stuck in a major that doesn't feel right — it's okay to change direction. Every step I took brought me closer to what I actually love doing. Adjust the plan as many times as you need to. Keep moving. You'll find your path.
