@@ -5,7 +5,33 @@ import { getHomeContent, getSortedPostsData } from "../lib/posts";
 export default function Home({ home, recentPosts }) {
   return (
     <Layout title="Andy's Archive" description={home.subtitle}>
-      {home.subtitle && <p className="hero-subtitle">{home.subtitle}</p>}
+      <section className="hero">
+        <div className="swiss-grid">
+          <div className="hero-media">
+            <div className="hero-blob" aria-hidden="true" />
+          </div>
+
+          <div className="hero-type">
+            <h1 className="hero-title">
+              ANDY'S <br />
+              <span className="hero-accent">ARCHIVE</span> <br />
+              FORM.
+            </h1>
+
+            <div className="hero-panel">
+              <p className="hero-kicker">Principles</p>
+              <p className="hero-desc">
+                {home.subtitle ||
+                  "Swiss precision with organic warmth — built to breathe."}
+              </p>
+            </div>
+
+            <Link href="/blog" className="hero-cta">
+              Explore Posts
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <div
         className="prose"

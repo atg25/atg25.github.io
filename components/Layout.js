@@ -15,6 +15,8 @@ export default function Layout({
   title = "Andy's Archive",
   description = "",
 }) {
+  const vol = `Vol. 01 / ${new Date().getFullYear()}`;
+
   return (
     <>
       <Head>
@@ -45,9 +47,12 @@ export default function Layout({
             <Link href="/" className="nav-brand">
               Andy's Archive
             </Link>
-            <div className="nav-links">
-              <Link href="/">Home</Link>
-              <Link href="/blog">Blog</Link>
+            <div className="nav-right">
+              <span className="nav-meta">{vol}</span>
+              <div className="nav-links">
+                <Link href="/">Home</Link>
+                <Link href="/blog">Blog</Link>
+              </div>
             </div>
           </nav>
         </header>
