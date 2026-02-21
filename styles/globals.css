@@ -1,96 +1,103 @@
-/* ═══════════════════════════════════════════════════════
-   Andy's Archive — Bold Organic Design System
-   ═══════════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════
+   Andy's Archive — Organic Swiss Design System
+   Swiss precision + organic warmth
+   ═══════════════════════════════════════════════════════════ */
 
-/* ── Reset ──────────────────────────────────────────── */
+/* ── Reset ──────────────────────────────────────────────── */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ── Token System ───────────────────────────────────── */
+/* ── Tokens ─────────────────────────────────────────────── */
 
 :root {
-  --bg: #f9f7f2;
-  --bg-dark: #ede9e0;
-  --surface: #ffffff;
-  --surface-tinted: #fdf4ec;
+  /* Palette — earth on alabaster */
+  --bg:             #FAF9F6;   /* alabaster */
+  --bg-ruled:       #F2F0EB;   /* slightly deeper field */
+  --surface:        #FFFFFF;
+  --surface-tinted: #FDF6EE;
 
-  --primary: #3d5a3e;
-  --primary-dark: #2b4230;
-  --secondary: #c1440e;
-  --accent: #d4973b;
+  --ink:            #2D2926;   /* deep charcoal — primary text */
+  --ink-mid:        #5A4F47;
+  --ink-muted:      #8A7E76;
 
-  --text: #2c1a0e;
-  --text-mid: #5c3d1e;
-  --text-muted: #8c6d52;
+  --accent:         #C8511A;   /* poppy / burnt sienna */
+  --accent-dark:    #A03E10;
+  --punch:          #D4973B;   /* deep ochre — secondary pop */
 
-  --border: rgba(44, 26, 14, 0.14);
-  --border-strong: rgba(44, 26, 14, 0.28);
+  --moss:           #3D5A3E;
 
-  --shadow-sm: 0 2px 8px rgba(70, 40, 0, 0.08);
-  --shadow-md: 0 8px 24px rgba(70, 40, 0, 0.1);
-  --shadow-lg: 0 16px 48px rgba(70, 40, 0, 0.13);
+  --border:         rgba(45, 41, 38, 0.12);
+  --border-strong:  rgba(45, 41, 38, 0.24);
 
-  --font-serif: "Playfair Display", Georgia, "Times New Roman", serif;
-  --font-sans: "Montserrat", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+  /* Swiss shadows — no color tint, pure depth */
+  --shadow-sm:  0 1px 4px rgba(45, 41, 38, 0.07);
+  --shadow-md:  0 4px 16px rgba(45, 41, 38, 0.09);
+  --shadow-lg:  0 12px 40px rgba(45, 41, 38, 0.12);
 
-  --max-w: 740px;
-  --radius-sm: 12px;
-  --radius-md: 24px;
-  --radius-lg: 36px;
-  --radius-pill: 999px;
+  /* Type — Inter Neo-Grotesk */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Grid */
+  --max-w:      1080px;
+  --col-w:      640px;   /* prose column */
+  --gutter:     2rem;
+
+  /* Swiss consistent radius — soft, not round */
+  --r: 10px;
+
+  /* Elastic easing */
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out:     cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Base ───────────────────────────────────────────── */
+/* ── Base ───────────────────────────────────────────────── */
 
 html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background-color: var(--bg);
-  color: var(--text);
+  color: var(--ink);
   font-family: var(--font-sans);
   font-weight: 400;
-  line-height: 1.75;
+  line-height: 1.7;
   min-height: 100vh;
 }
 
-/* ── Grain overlay ──────────────────────────────────── */
+/* ── Grain overlay ──────────────────────────────────────── */
+/* Breaks the clinical flat feel — paper texture at low opacity */
 
 .grain-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 200px 200px;
 }
 
-/* ── Links ──────────────────────────────────────────── */
+/* ── Links ──────────────────────────────────────────────── */
 
 a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.18s ease;
+  transition: color 0.15s var(--ease-out);
 }
 
-a:hover {
-  color: var(--primary-dark);
-}
+a:hover { color: var(--accent-dark); }
 
-/* ── Layout ─────────────────────────────────────────── */
+/* ── Layout — strict grid wrapper ──────────────────────── */
 
 .site-wrapper {
   display: flex;
@@ -98,218 +105,222 @@ a:hover {
   min-height: 100vh;
   max-width: var(--max-w);
   margin: 0 auto;
-  padding: 0 1.75rem;
+  padding: 0 var(--gutter);
 }
 
-/* ── Nav ────────────────────────────────────────────── */
+/* ── Header ─────────────────────────────────────────────── */
 
 .site-header {
   padding: 1.75rem 0 1.5rem;
-  margin-bottom: 3.5rem;
-  border-bottom: 1.5px solid var(--border);
-  position: relative;
-}
-
-.site-header::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -3rem;
-  transform: translateY(-50%);
-  width: 5rem;
-  height: 5rem;
-  background: var(--accent);
-  opacity: 0.12;
-  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
-  pointer-events: none;
-  z-index: -1;
+  margin-bottom: 4rem;
+  /* Swiss rule: header bleeds a contrast bar to mark the zone */
+  border-bottom: 2px solid var(--ink);
 }
 
 .nav {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
+/* Brand — massive scale, tight tracking, solid object */
 .nav-brand {
-  font-family: var(--font-serif);
-  font-weight: 900;
-  font-size: 1.35rem;
-  color: var(--text);
-  letter-spacing: -0.01em;
-  transition: color 0.18s;
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  letter-spacing: -0.045em;   /* extreme tightening — Swiss object */
+  color: var(--ink);
+  text-transform: uppercase;
+  transition: color 0.18s var(--ease-out);
+  line-height: 1;
 }
 
-.nav-brand:hover {
-  color: var(--primary);
-}
+.nav-brand:hover { color: var(--accent); }
 
+/* Nav links — small caps utility style */
 .nav-links {
   display: flex;
-  gap: 0.25rem;
+  gap: 0.2rem;
+  align-items: center;
 }
 
 .nav-links a {
-  font-family: var(--font-sans);
+  font-size: 0.75rem;
   font-weight: 600;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-mid);
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-pill);
+  color: var(--ink-mid);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--r);
+  border: 1.5px solid transparent;
   transition:
-    background 0.18s,
-    color 0.18s;
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
 }
 
 .nav-links a:hover {
-  background: var(--primary);
-  color: #fff;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-1px);  /* elastic lift */
 }
 
-/* ── Main ───────────────────────────────────────────── */
+/* ── Main ───────────────────────────────────────────────── */
 
 .main {
   flex: 1;
-  padding-bottom: 5rem;
+  /* asymmetric left offset — Swiss negative space as structure */
+  padding-bottom: 6rem;
 }
 
-/* ── Hero subtitle ──────────────────────────────────── */
+/* ── Hero subtitle ──────────────────────────────────────── */
 
 .hero-subtitle {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--text-muted);
-  margin-bottom: 2.5rem;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent);
+  letter-spacing: 0.01em;
+  color: var(--ink-muted);
+  margin-bottom: 3rem;
+  /* left ruled line — Swiss editorial marker */
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--punch);
   line-height: 1.6;
+  max-width: var(--col-w);
 }
 
-/* ── Prose ──────────────────────────────────────────── */
+/* ── Prose ──────────────────────────────────────────────── */
+
+.prose {
+  max-width: var(--col-w);
+}
 
 .prose h1,
 .prose h2,
 .prose h3,
 .prose h4 {
-  font-family: var(--font-serif);
-  color: var(--text);
-  line-height: 1.25;
-  margin: 2.5rem 0 0.85rem;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  line-height: 1.1;
+  letter-spacing: -0.035em;   /* tighten headings into solid objects */
+  font-weight: 800;
+  margin: 2.75rem 0 0.9rem;
 }
 
-.prose h1 {
-  font-size: 2.2rem;
-  font-weight: 900;
-}
-.prose h2 {
-  font-size: 1.55rem;
-  font-weight: 700;
-}
-.prose h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-}
+.prose h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+.prose h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); }
+.prose h3 { font-size: 1.2rem; letter-spacing: -0.02em; }
 
 .prose p {
-  font-family: var(--font-sans);
-  font-size: 1rem;
-  color: var(--text-mid);
-  margin-bottom: 1.35rem;
+  font-size: 1.0rem;
+  color: var(--ink-mid);
+  margin-bottom: 1.4rem;
   line-height: 1.8;
+  font-weight: 400;
 }
 
 .prose ul,
 .prose ol {
-  margin: 0 0 1.35rem 1.5rem;
-  color: var(--text-mid);
-  font-family: var(--font-sans);
+  margin: 0 0 1.4rem 1.4rem;
+  color: var(--ink-mid);
 }
 
-.prose li {
-  margin-bottom: 0.45rem;
-  line-height: 1.7;
-}
+.prose li { margin-bottom: 0.4rem; line-height: 1.75; }
+
 .prose strong {
-  color: var(--text);
-  font-weight: 600;
+  color: var(--ink);
+  font-weight: 700;
 }
+
+.prose em { font-style: italic; }
 
 .prose code {
   font-family: var(--font-mono);
-  font-size: 0.875em;
-  background: var(--bg-dark);
+  font-size: 0.86em;
+  background: var(--bg-ruled);
   border: 1px solid var(--border);
-  padding: 0.1em 0.45em;
-  border-radius: 8px;
-  color: var(--primary);
+  padding: 0.12em 0.45em;
+  border-radius: 6px;
+  color: var(--accent);
 }
 
 .prose pre {
-  background: var(--text);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
+  background: var(--ink);
+  border-radius: var(--r);
+  padding: 1.5rem 1.75rem;
   overflow-x: auto;
   margin-bottom: 1.75rem;
   box-shadow: var(--shadow-md);
+  /* organic blob mask on code blocks */
+  --blob: polygon(0% 2%, 100% 0%, 100% 98%, 0% 100%);
 }
 
 .prose pre code {
   background: none;
   border: none;
   padding: 0;
-  font-size: 0.85rem;
-  color: var(--bg);
+  font-size: 0.84rem;
+  color: #FAF9F6;
+  letter-spacing: 0;
 }
 
 .prose blockquote {
+  position: relative;
   background: var(--surface-tinted);
   border: none;
-  border-left: 4px solid var(--accent);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
-  padding: 1.1rem 1.4rem;
-  margin: 1.75rem 0;
+  border-left: 4px solid var(--punch);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
   box-shadow: var(--shadow-sm);
+  /* organic blob in corner */
+  overflow: hidden;
+}
+
+.prose blockquote::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: var(--punch);
+  opacity: 0.08;
+  border-radius: 60% 40% 70% 30% / 40% 60% 40% 60%;
+  pointer-events: none;
 }
 
 .prose blockquote p {
-  color: var(--text-mid);
+  color: var(--ink-mid);
   font-style: italic;
   margin: 0;
 }
 
 .prose a {
-  color: var(--primary);
+  color: var(--accent);
   text-decoration: underline;
-  text-decoration-color: rgba(61, 90, 62, 0.35);
+  text-decoration-color: rgba(200, 81, 26, 0.3);
   text-underline-offset: 3px;
-  transition:
-    text-decoration-color 0.18s,
-    color 0.18s;
+  transition: text-decoration-color 0.18s;
 }
 
 .prose a:hover {
-  color: var(--primary-dark);
-  text-decoration-color: var(--primary-dark);
+  color: var(--accent-dark);
+  text-decoration-color: var(--accent-dark);
 }
 
 .prose hr {
   border: none;
-  height: 1.5px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--border-strong),
-    transparent
-  );
-  margin: 3rem 0;
+  height: 2px;
+  background: var(--ink);
+  margin: 3.5rem 0;
+  width: 3rem;   /* Swiss short rule — not full width */
 }
 
 .prose img {
   max-width: 100%;
-  border-radius: var(--radius-md);
+  border-radius: var(--r);
   box-shadow: var(--shadow-md);
 }
 
@@ -321,94 +332,125 @@ a:hover {
 }
 
 .prose th {
-  font-family: var(--font-sans);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   text-align: left;
-  padding: 0.65rem 0.9rem;
-  background: var(--bg-dark);
-  border-bottom: 2px solid var(--border-strong);
+  padding: 0.6rem 0.9rem;
+  background: var(--bg-ruled);
+  border-bottom: 2px solid var(--ink);
+  color: var(--ink);
 }
 
 .prose td {
   padding: 0.6rem 0.9rem;
   border-bottom: 1px solid var(--border);
-  color: var(--text-mid);
+  color: var(--ink-mid);
 }
 
-.prose tr:last-child td {
-  border-bottom: none;
-}
+.prose tr:last-child td { border-bottom: none; }
 
-/* ── Posts list ─────────────────────────────────────── */
+/* ── Section labels — Swiss utility markers ─────────────── */
 
 .recent-posts {
-  margin-top: 3rem;
+  margin-top: 4rem;
   position: relative;
+  max-width: var(--col-w);
 }
 
+/* organic moss blob behind section */
 .recent-posts::before {
-  content: "";
+  content: '';
   position: absolute;
-  top: -1rem;
-  right: -2rem;
-  width: 8rem;
-  height: 8rem;
-  background: var(--secondary);
-  opacity: 0.07;
-  border-radius: 60% 40% 70% 30% / 40% 50% 50% 60%;
+  top: 0;
+  right: -1.5rem;
+  width: 7rem;
+  height: 7rem;
+  background: var(--moss);
+  opacity: 0.06;
+  border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
   pointer-events: none;
   z-index: 0;
 }
 
 .recent-posts h2,
 .main > h1 {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 900;
-  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.04em;
+  color: var(--ink);
   margin-bottom: 1.75rem;
   position: relative;
   z-index: 1;
+  line-height: 1.1;
 }
 
+/* Swiss rule underline — short, bold, left-aligned */
 .recent-posts h2::after,
 .main > h1::after {
-  content: "";
+  content: '';
   display: block;
-  width: 3rem;
+  width: 2rem;
   height: 3px;
-  margin-top: 0.6rem;
+  margin-top: 0.65rem;
   background: var(--accent);
-  border-radius: var(--radius-pill);
 }
 
 .posts-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.75rem;
+  margin: 0 0 2rem;
   position: relative;
   z-index: 1;
+  /* Swiss grid: list items are cells in the column */
+  display: grid;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
 }
 
-/* ── Post card ──────────────────────────────────────── */
+/* ── Post card — rectangular grid cell, organic interior ── */
 
 .post-item {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius-md);
+  background: var(--bg);
   padding: 1.4rem 1.6rem;
-  margin-bottom: 1rem;
-  box-shadow: var(--shadow-sm);
   transition:
-    box-shadow 0.22s ease,
-    transform 0.22s ease,
-    border-color 0.22s ease;
+    background 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
+  position: relative;
+  overflow: hidden;
+}
+
+/* organic blob reveal on hover — the organic twist inside the grid cell */
+.post-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  width: 5rem;
+  height: 5rem;
+  background: var(--accent);
+  opacity: 0;
+  transform: translate(0, -50%) scale(0.6);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  transition:
+    opacity 0.3s var(--ease-out),
+    transform 0.45s var(--ease-elastic);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .post-item:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-3px);
-  border-color: var(--border-strong);
+  background: var(--surface);
+  /* elastic lift — moves on straight axis (Swiss), bounces on stop (Organic) */
+  transform: translateX(4px);
+}
+
+.post-item:hover::before {
+  opacity: 0.07;
+  transform: translate(0, -50%) scale(1);
 }
 
 .post-link {
@@ -416,124 +458,136 @@ a:hover {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
-  color: var(--text);
+  color: var(--ink);
   font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
-.post-link:hover {
-  color: var(--primary);
-}
+.post-link:hover { color: var(--accent); }
 
 .post-title {
-  font-family: var(--font-serif);
-  font-size: 1.07rem;
+  font-size: 0.97rem;
   font-weight: 700;
-  line-height: 1.35;
-  transition: color 0.18s;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  transition: color 0.18s var(--ease-out);
 }
 
-.post-item:hover .post-title {
-  color: var(--primary);
-}
+.post-item:hover .post-title { color: var(--accent); }
 
 .post-date {
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  background: var(--bg-dark);
-  padding: 0.2em 0.7em;
-  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .post-excerpt {
-  margin-top: 0.55rem;
+  margin-top: 0.45rem;
   font-size: 0.88rem;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
-/* ── View all button ────────────────────────────────── */
+/* ── CTA Button — Swiss rect + squish micro-interaction ─── */
 
 .view-all {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: #fff;
-  background: var(--primary);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--ink);
   padding: 0.7rem 1.5rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--r);
+  border: 2px solid var(--ink);
   box-shadow: var(--shadow-sm);
   transition:
-    background 0.18s,
-    box-shadow 0.18s,
-    transform 0.1s;
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic),
+    box-shadow 0.2s var(--ease-out);
 }
 
 .view-all:hover {
-  background: var(--primary-dark);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  /* elastic bounce upward */
+  transform: translateY(-3px) scale(1.02);
 }
 
+/* squish on click */
 .view-all:active {
   transform: scale(0.95);
+  box-shadow: none;
+  transition-duration: 0.08s;
 }
 
-/* ── Full post ──────────────────────────────────────── */
+/* ── Full post ──────────────────────────────────────────── */
+
+.post-full {
+  max-width: var(--col-w);
+}
 
 .post-full .post-header {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   padding-bottom: 2rem;
-  border-bottom: 1.5px solid var(--border);
+  border-bottom: 2px solid var(--ink);
   position: relative;
 }
 
+/* organic ink blob behind title */
 .post-full .post-header::after {
-  content: "";
+  content: '';
   position: absolute;
-  bottom: -1rem;
-  right: 0;
-  width: 6rem;
-  height: 6rem;
-  background: var(--primary);
-  opacity: 0.07;
+  bottom: 0.5rem;
+  right: -1rem;
+  width: 5rem;
+  height: 5rem;
+  background: var(--ink);
+  opacity: 0.04;
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   pointer-events: none;
 }
 
 .post-full h1 {
-  font-family: var(--font-serif);
-  font-size: 2.6rem;
-  font-weight: 900;
-  color: var(--text);
-  line-height: 1.2;
-  margin-bottom: 0.75rem;
-  letter-spacing: -0.01em;
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  letter-spacing: -0.045em;   /* max tighten — Swiss object */
 }
 
 .post-full time.post-date {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  color: var(--text-muted);
-  background: var(--bg-dark);
-  padding: 0.25em 0.85em;
-  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  border: 1.5px solid var(--border-strong);
+  padding: 0.25em 0.8em;
+  border-radius: var(--r);
 }
 
 .post-nav {
-  margin-top: 3.5rem;
+  margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1.5px solid var(--border);
+  border-top: 2px solid var(--border);
 }
 
 .post-nav a {
@@ -541,39 +595,38 @@ a:hover {
   align-items: center;
   gap: 0.4rem;
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
-  color: var(--text-mid);
-  background: var(--bg-dark);
-  border: 1.5px solid var(--border);
-  padding: 0.6rem 1.2rem;
-  border-radius: var(--radius-pill);
-  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: 2px solid var(--ink);
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--r);
   transition:
-    background 0.18s,
-    color 0.18s,
-    transform 0.1s,
-    box-shadow 0.18s;
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
 }
 
 .post-nav a:hover {
-  background: var(--text);
+  background: var(--ink);
   color: var(--bg);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-1px);
+  transform: translateX(-4px);  /* elastic slide left */
 }
 
 .post-nav a:active {
   transform: scale(0.95);
+  transition-duration: 0.08s;
 }
 
-/* ── Footer ─────────────────────────────────────────── */
+/* ── Footer ─────────────────────────────────────────────── */
 
 .site-footer {
-  padding: 2rem 0 1.75rem;
-  border-top: 1.5px solid var(--border);
-  font-size: 0.83rem;
+  padding: 2rem 0;
+  border-top: 2px solid var(--ink);
+  font-size: 0.8rem;
 }
 
 .footer-inner {
@@ -586,59 +639,57 @@ a:hover {
 
 .footer-social {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.35rem;
   flex-wrap: wrap;
 }
 
 .footer-social a {
   font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.78rem;
-  letter-spacing: 0.05em;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--text-mid);
-  background: var(--bg-dark);
-  border: 1.5px solid var(--border);
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-pill);
+  color: var(--ink);
+  border: 1.5px solid var(--border-strong);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--r);
+  background: transparent;
   transition:
-    background 0.18s,
-    color 0.18s,
-    transform 0.1s,
-    border-color 0.18s;
+    background 0.18s var(--ease-out),
+    color 0.18s var(--ease-out),
+    border-color 0.18s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
 }
 
 .footer-social a:hover {
-  background: var(--secondary);
-  color: #fff;
-  border-color: var(--secondary);
-  transform: translateY(-1px);
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-2px);
 }
 
 .footer-social a:active {
   transform: scale(0.95);
+  transition-duration: 0.08s;
 }
 
 .footer-copy {
-  color: var(--text-muted);
-  font-family: var(--font-sans);
-  font-size: 0.82rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink-muted);
 }
 
-/* ── Responsive ─────────────────────────────────────── */
+/* ── Responsive ─────────────────────────────────────────── */
 
-@media (max-width: 600px) {
-  .post-full h1 {
-    font-size: 1.9rem;
-  }
+@media (max-width: 640px) {
+  :root { --gutter: 1.25rem; }
+
+  .post-full h1 { font-size: 1.85rem; }
+  .nav-brand { font-size: 1.05rem; }
+
   .post-link {
     flex-direction: column;
-    gap: 0.3rem;
-  }
-  .site-header::before {
-    display: none;
-  }
-  .recent-posts::before {
-    display: none;
+    gap: 0.25rem;
   }
 }

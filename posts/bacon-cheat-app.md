@@ -55,7 +55,7 @@ from PIL import ImageGrab
 def capture_screenshot() -> str:
     img = ImageGrab.grab()
     img = img.resize((1280, 720))  # keep tokens reasonable
-    
+
     from io import BytesIO
     buf = BytesIO()
     img.save(buf, format="PNG")
@@ -144,7 +144,7 @@ Everything else — online exams, take-home tests, "AI-proof" prompts, plagiaris
 
 ### What Should Actually Change
 
-The honest answer is that most multiple-choice tests and problem sets were never really measuring deep understanding to begin with. They were measuring the ability to recall and apply a procedure under time pressure. AI doesn't just cheat those assessments — it *exposes* that they were always a proxy metric.
+The honest answer is that most multiple-choice tests and problem sets were never really measuring deep understanding to begin with. They were measuring the ability to recall and apply a procedure under time pressure. AI doesn't just cheat those assessments — it _exposes_ that they were always a proxy metric.
 
 The assessments worth defending are the ones where **the process is the point** — a live whiteboard interview, a design critique, a debate, a defended thesis. Those can't be cheated with a wake word and a screenshot. Everything else should probably be redesigned anyway.
 
