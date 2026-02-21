@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import AuthControls from "./AuthControls";
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/atg25" },
@@ -52,6 +53,7 @@ export default function Layout({
               <div className="nav-links">
                 <Link href="/">Home</Link>
                 <Link href="/blog">Blog</Link>
+                <AuthControls />
               </div>
             </div>
           </nav>

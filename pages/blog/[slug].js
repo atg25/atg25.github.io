@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout";
 import Link from "next/link";
+import PostInteractions from "../../components/PostInteractions";
 import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }) {
@@ -18,6 +19,9 @@ export default function Post({ postData }) {
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
       </article>
+
+      <PostInteractions postSlug={postData.slug} />
+
       <div className="post-nav">
         <Link href="/blog">← Back to all posts</Link>
       </div>

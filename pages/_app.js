@@ -1,9 +1,10 @@
 import "../styles/globals.css";
 import Head from "next/head";
+import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <SessionProvider session={pageProps.session}>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -17,6 +18,6 @@ export default function App({ Component, pageProps }) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </SessionProvider>
   );
 }

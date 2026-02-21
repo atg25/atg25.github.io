@@ -887,6 +887,334 @@ a:hover {
   transition-duration: 0.08s;
 }
 
+/* ── Auth controls ──────────────────────────────────────── */
+
+.auth-loading {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.auth-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.auth-link {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--r);
+  border: 1.5px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    background 0.2s var(--ease-out),
+    color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
+}
+
+.auth-link:hover {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.auth-signout {
+  font-family: var(--font-sans);
+}
+
+.auth-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  padding: 0.62rem 1.1rem;
+  border-radius: var(--r);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.35s var(--ease-elastic);
+}
+
+.auth-button:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.auth-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-nav-button {
+  margin-left: 0.2rem;
+}
+
+/* ── Post interactions ──────────────────────────────────── */
+
+.post-interactions {
+  margin-top: 2rem;
+  padding: 1.3rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.interaction-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.interaction-button {
+  border: 2px solid var(--ink);
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: var(--r);
+  padding: 0.5rem 0.85rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition:
+    transform 0.35s var(--ease-elastic),
+    background 0.18s var(--ease-out),
+    color 0.18s var(--ease-out);
+}
+
+.interaction-button:hover {
+  transform: translateY(-1px);
+}
+
+.interaction-button.is-active {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.interaction-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.interaction-count {
+  margin-left: 0.3rem;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.interaction-signin {
+  margin-bottom: 1rem;
+}
+
+.interaction-signin p {
+  margin-bottom: 0.5rem;
+  color: var(--ink-mid);
+}
+
+.comment-form {
+  margin-top: 0.8rem;
+}
+
+.comment-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.comment-form textarea {
+  width: 100%;
+  min-height: 110px;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--r);
+  padding: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  resize: vertical;
+  background: var(--bg);
+}
+
+.comment-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.comment-form-footer {
+  margin-top: 0.65rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.comment-error {
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+}
+
+.comments-list {
+  margin-top: 1.25rem;
+}
+
+.comments-list h3 {
+  margin-bottom: 0.7rem;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.comments-empty {
+  color: var(--ink-muted);
+}
+
+.comment-card {
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0.8rem;
+  margin-bottom: 0.6rem;
+  background: var(--bg);
+}
+
+.comment-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.45rem;
+}
+
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.comment-avatar-fallback {
+  background: var(--bg-ruled);
+}
+
+.comment-author {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.comment-time {
+  color: var(--ink-muted);
+  font-size: 0.74rem;
+}
+
+.comment-content {
+  color: var(--ink-mid);
+  line-height: 1.65;
+}
+
+.interaction-dashboard-link {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+}
+
+/* ── Dashboard ──────────────────────────────────────────── */
+
+.dashboard-auth {
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  padding: 1.3rem;
+  max-width: 40rem;
+}
+
+.dashboard-auth h1 {
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-auth p {
+  margin-bottom: 0.8rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.dashboard-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+}
+
+.dashboard-avatar-fallback {
+  background: var(--bg-ruled);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.dashboard-card {
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  padding: 1rem;
+  background: var(--surface);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.dashboard-card ul {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.dashboard-empty {
+  color: var(--ink-muted);
+}
+
+.dashboard-comment-text {
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+}
+
+.dashboard-comment-meta {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.dashboard-error {
+  margin-bottom: 1rem;
+  color: var(--accent-dark);
+}
+
 /* ── Footer ─────────────────────────────────────────────── */
 
 .site-footer {
@@ -963,5 +1291,9 @@ a:hover {
   .post-link {
     flex-direction: column;
     gap: 0.25rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
   }
 }
