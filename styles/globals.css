@@ -439,7 +439,8 @@ a:hover {
 /* ── Prose ──────────────────────────────────────────────── */
 
 .prose {
-  max-width: var(--col-w);
+  max-width: none;
+  width: 100%;
 }
 
 .prose h1,
@@ -802,7 +803,8 @@ a:hover {
 /* ── Full post ──────────────────────────────────────────── */
 
 .post-full {
-  max-width: var(--col-w);
+  max-width: none;
+  width: 100%;
 }
 
 .post-full .post-header {
