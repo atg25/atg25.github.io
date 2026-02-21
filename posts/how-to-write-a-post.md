@@ -17,11 +17,11 @@ GitHub Actions will pick it up, rebuild the site, and deploy within a minute or 
 
 ## Frontmatter fields
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `title` | Yes | Post title shown everywhere |
-| `date` | Yes | ISO date — used for sorting |
-| `excerpt` | No | Short preview shown in lists |
+| Field     | Required | Description                  |
+| --------- | -------- | ---------------------------- |
+| `title`   | Yes      | Post title shown everywhere  |
+| `date`    | Yes      | ISO date — used for sorting  |
+| `excerpt` | No       | Short preview shown in lists |
 
 ## Home page
 

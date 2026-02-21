@@ -1,6 +1,6 @@
-import Layout from '../../components/Layout';
-import Link from 'next/link';
-import { getAllPostSlugs, getPostData } from '../../lib/posts';
+import Layout from "../../components/Layout";
+import Link from "next/link";
+import { getAllPostSlugs, getPostData } from "../../lib/posts";
 
 export default function Post({ postData }) {
   return (
@@ -11,9 +11,7 @@ export default function Post({ postData }) {
       <article className="post-full">
         <header className="post-header">
           <h1>{postData.title}</h1>
-          {postData.date && (
-            <time className="post-date">{postData.date}</time>
-          )}
+          {postData.date && <time className="post-date">{postData.date}</time>}
         </header>
         <div
           className="prose"
