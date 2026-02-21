@@ -1,29 +1,28 @@
 ---
 title: "Hello World"
 date: "2026-02-20"
-excerpt: "The first post — where every blog begins."
+excerpt: "First post. A quick intro to who I am and what this blog is about."
 ---
 
-Every blog starts with a hello world. This is mine.
+Every blog needs a first post, so here we go.
 
-## How this works
+## Who am I?
 
-Posts live in the `posts/` folder as Markdown files. Each file needs a frontmatter block at the top:
+I'm Andrew — a product engineer in my 20s with a deep interest in AI and building things that actually matter. I studied at NJIT, spend too much time on side projects, and genuinely enjoy the craft of software.
 
-```markdown
+## What is this?
+
+Andy's Archive is where I write about things I'm learning, building, and thinking about. Expect posts on:
+
+- **AI & LLMs** — how I'm using them, where they fall short, where they surprise me
+- **Product engineering** — building products people actually want to use
+- **Side projects** — what I'm working on and what I'm learning from it
+- **Misc** — whatever else is taking up space in my head
+
+No rigid schedule. No fluff. Just honest writing when I have something worth saying.
+
 ---
-title: "Your Post Title"
-date: "2026-02-20"
-excerpt: "A short description shown in the post list."
----
 
-Your post content goes here...
-```
+If any of that sounds interesting, stick around. The best way to follow along is to bookmark this page and check back every now and then.
 
-Filenames become URL slugs. `hello-world.md` → `/blog/hello-world`.
-
-## Writing
-
-Just drop a new `.md` file in `posts/`, commit, push — GitHub Actions will rebuild and redeploy the site automatically.
-
-That's it. Happy blogging.
+Let's build something.

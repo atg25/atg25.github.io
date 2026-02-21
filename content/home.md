@@ -1,16 +1,17 @@
 ---
-title: "My Blog"
-subtitle: "Thoughts on tech, life, and everything in between."
+title: "Andy's Archive"
+subtitle: "Ramblings of a 20-something product engineer who loves to create."
 showRecentPosts: true
 recentPostsCount: 5
 ---
 
-## Hey, I'm Alex 👋
+## Hey, I'm Andrew 👋
 
-Welcome to my corner of the internet. I write about software, ideas I'm exploring, and things I find interesting.
+I'm a young product engineer passionate about AI. I build things, break things, and occasionally write about it here.
 
-Feel free to poke around — everything lives in the **Blog** tab above.
+Follow along for thoughts on technology, product thinking, and whatever I happen to be obsessing over this week.
 
 ---
 
-Edit `content/home.md` to change this page. Change the frontmatter to update the title, subtitle, and how many recent posts show below.
+**Find me elsewhere:**
+[GitHub](https://github.com/atg25) · [LinkedIn](https://www.linkedin.com/in/andrew-gardner2026/) · [Website](https://andrewg.vercel.app)
