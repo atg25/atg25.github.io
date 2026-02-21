@@ -18,9 +18,9 @@
   --surface:        #FFFFFF;
   --surface-tinted: #FDF4EC;
 
-  --primary:        #C1440E;
-  --primary-dark:   #9A3008;
-  --secondary:      #3D5A3E;
+  --primary:        #3D5A3E;
+  --primary-dark:   #2B4230;
+  --secondary:      #C1440E;
   --accent:         #D4973B;
 
   --text:           #2C1A0E;
@@ -264,7 +264,7 @@ a:hover {
 .prose a {
   color: var(--primary);
   text-decoration: underline;
-  text-decoration-color: rgba(193, 68, 14, 0.35);
+  text-decoration-color: rgba(61, 90, 62, 0.35);
   text-underline-offset: 3px;
   transition: text-decoration-color 0.18s, color 0.18s;
 }
