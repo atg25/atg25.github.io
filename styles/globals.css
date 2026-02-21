@@ -359,12 +359,9 @@ a:hover {
   margin: 0 0 4.5rem;
 }
 
-.home-spacer {
-  display: none;
-}
-
 .home-prose {
   max-width: none;
+  width: 100%;
 }
 
 .home-prose p {
@@ -409,14 +406,19 @@ a:hover {
     grid-column: 8 / -1;
   }
 
-  .home-spacer {
-    display: block;
-    grid-column: 1 / span 7;
-  }
-
   .home-prose {
-    grid-column: 8 / -1;
+    grid-column: 1 / -1;
   }
+}
+
+/* Home-only width consistency: match navbar/container width */
+
+.home-page .prose {
+  max-width: none;
+}
+
+.home-page .recent-posts {
+  max-width: none;
 }
 
 /* ── Hero subtitle ──────────────────────────────────────── */
