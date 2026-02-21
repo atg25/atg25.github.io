@@ -49,7 +49,9 @@ export default async function handler(req, res) {
     });
     if (!rate.allowed) {
       res.setHeader("Retry-After", String(rate.retryAfterSec));
-      return res.status(429).json({ error: "Too many requests. Please slow down." });
+      return res
+        .status(429)
+        .json({ error: "Too many requests. Please slow down." });
     }
 
     const session = await requireUserSession(req, res);
