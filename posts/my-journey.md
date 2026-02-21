@@ -4,7 +4,7 @@ date: "2026-02-20"
 excerpt: "From CS to WIS, minors added and dropped — how following what I actually loved led me to AI-driven product engineering."
 ---
 
-In 2022, I walked onto campus as a freshman Computer Science major. Like many others, I thought that was the only way to build a career in tech. I spent my first year staring at code, trying to fit into a mold that didn't quite feel right. I was learning the basics, but I kept missing the bigger picture — how people actually *use* technology.
+In 2022, I walked onto campus as a freshman Computer Science major. Like many others, I thought that was the only way to build a career in tech. I spent my first year staring at code, trying to fit into a mold that didn't quite feel right. I was learning the basics, but I kept missing the bigger picture — how people actually _use_ technology.
 
 ## The First Pivot
 
@@ -12,7 +12,7 @@ By sophomore year I wanted something more. I discovered the **Web and Informatio
 
 ## Making the Switch
 
-The real shift happened in the first semester of junior year. My passion for the *how* and *why* of technology was clearly stronger than my interest in pure theory. So I made the call — I switched my major to WIS and kept Computer Science as a minor.
+The real shift happened in the first semester of junior year. My passion for the _how_ and _why_ of technology was clearly stronger than my interest in pure theory. So I made the call — I switched my major to WIS and kept Computer Science as a minor.
 
 It was a scary moment. It felt like stepping off the "standard" path. But I felt a weight lift off my shoulders. I was finally studying what I loved.
 
@@ -30,7 +30,7 @@ I'm not just writing code. I'm building solutions.
 
 ## Keep Moving Forward
 
-There's a quote from *Meet the Robinsons* that stuck with me: **"Keep moving forward."**
+There's a quote from _Meet the Robinsons_ that stuck with me: **"Keep moving forward."**
 
 My journey wasn't a straight line. It was full of changes, doubts, and pivots. CS to WIS. Minor added. Minor swapped. Minor dropped. Each decision felt risky in the moment and obvious in hindsight.
 
