@@ -13,6 +13,7 @@ export default function PostInteractions({ postSlug }) {
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState("");
   const [commentError, setCommentError] = useState("");
+  const [interactionError, setInteractionError] = useState("");
   const [busyLike, setBusyLike] = useState(false);
   const [busySave, setBusySave] = useState(false);
   const [busyComment, setBusyComment] = useState(false);
@@ -26,7 +27,9 @@ export default function PostInteractions({ postSlug }) {
 
     async function loadComments() {
       try {
-        const response = await fetch(`/api/comments?postSlug=${encodeURIComponent(postSlug)}`);
+        const response = await fetch(
+          `/api/comments?postSlug=${encodeURIComponent(postSlug)}`,
+        );
         if (!response.ok) return;
         const data = await response.json();
         if (!ignore) {
@@ -64,7 +67,9 @@ export default function PostInteractions({ postSlug }) {
         if (!ignore && likeRes.ok) {
           const likeData = await likeRes.json();
           setLiked(Boolean(likeData.liked));
-          setLikeCount(Number.isFinite(likeData.likeCount) ? likeData.likeCount : 0);
+          setLikeCount(
+            Number.isFinite(likeData.likeCount) ? likeData.likeCount : 0,
+          );
         }
 
         if (!ignore && saveRes.ok) {
@@ -88,6 +93,7 @@ export default function PostInteractions({ postSlug }) {
 
   async function toggleLike() {
     if (!isAuthed || busyLike) return;
+    setInteractionError("");
     setBusyLike(true);
     try {
       const response = await fetch("/api/likes", {
@@ -96,7 +102,11 @@ export default function PostInteractions({ postSlug }) {
         body: JSON.stringify({ postSlug }),
       });
 
-      if (!response.ok) return;
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        setInteractionError(data.error || "Unable to update like.");
+        return;
+      }
       const data = await response.json();
       setLiked(Boolean(data.liked));
       setLikeCount(Number.isFinite(data.likeCount) ? data.likeCount : 0);
@@ -107,6 +117,7 @@ export default function PostInteractions({ postSlug }) {
 
   async function toggleSave() {
     if (!isAuthed || busySave) return;
+    setInteractionError("");
     setBusySave(true);
     try {
       const response = await fetch("/api/saves", {
@@ -115,7 +126,11 @@ export default function PostInteractions({ postSlug }) {
         body: JSON.stringify({ postSlug }),
       });
 
-      if (!response.ok) return;
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        setInteractionError(data.error || "Unable to update save.");
+        return;
+      }
       const data = await response.json();
       setSaved(Boolean(data.saved));
     } finally {
@@ -165,7 +180,8 @@ export default function PostInteractions({ postSlug }) {
           onClick={toggleLike}
           disabled={!isAuthed || busyLike}
         >
-          {liked ? "♥ Liked" : "♡ Like"} <span className="interaction-count">{likeCount}</span>
+          {liked ? "♥ Liked" : "♡ Like"}{" "}
+          <span className="interaction-count">{likeCount}</span>
         </button>
 
         <button
@@ -193,17 +209,25 @@ export default function PostInteractions({ postSlug }) {
           id="comment"
           value={commentInput}
           onChange={(e) => setCommentInput(e.target.value)}
-          placeholder={isAuthed ? "Share your thoughts..." : "Sign in to comment"}
+          placeholder={
+            isAuthed ? "Share your thoughts..." : "Sign in to comment"
+          }
           maxLength={2000}
           disabled={!isAuthed || busyComment}
         />
         <div className="comment-form-footer">
-          <button type="submit" className="auth-button" disabled={!canSubmitComment}>
+          <button
+            type="submit"
+            className="auth-button"
+            disabled={!canSubmitComment}
+          >
             {busyComment ? "Posting..." : "Post Comment"}
           </button>
           {commentError && <p className="comment-error">{commentError}</p>}
         </div>
       </form>
+
+      {interactionError && <p className="comment-error">{interactionError}</p>}
 
       <div className="comments-list">
         <h3>Comments</h3>
@@ -214,12 +238,21 @@ export default function PostInteractions({ postSlug }) {
             <article key={comment.id} className="comment-card">
               <div className="comment-head">
                 {comment.user?.profilePicture ? (
-                  <img src={comment.user.profilePicture} alt="" className="comment-avatar" />
+                  <img
+                    src={comment.user.profilePicture}
+                    alt=""
+                    className="comment-avatar"
+                  />
                 ) : (
-                  <div className="comment-avatar comment-avatar-fallback" aria-hidden="true" />
+                  <div
+                    className="comment-avatar comment-avatar-fallback"
+                    aria-hidden="true"
+                  />
                 )}
                 <div>
-                  <p className="comment-author">{comment.user?.name || "User"}</p>
+                  <p className="comment-author">
+                    {comment.user?.name || "User"}
+                  </p>
                   <time className="comment-time">
                     {new Date(comment.createdAt).toLocaleString()}
                   </time>
