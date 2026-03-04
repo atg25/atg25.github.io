@@ -9,7 +9,7 @@ recentPostsCount: 5
 
 I'm a young software engineer passionate about AI. I build things, break things, and occasionally write about it here.
 
-Follow along for thoughts on technology, product thinking, and whatever I happen to be obsessing over this week.
+This entire site was developed and is maintained by AI. Anytime I have an idea I'll record or type my loose thoughts on my phone. After it's sent to an AI that drafts a post, which I can edit, hit publish, and voila I have a new blog post!
 
 ---
 
