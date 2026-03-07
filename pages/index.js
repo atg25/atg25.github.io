@@ -92,7 +92,7 @@ export default function Home({ home, recentPosts }) {
               <h1 className="hero-title">
                 ANDY'S <br />
                 <span className="hero-accent">ARCHIVE</span> <br />
-                FORM.
+                BLOG.
               </h1>
 
               <div className="hero-panel">
